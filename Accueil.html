@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSpace Group</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: white;
+        }
+        .menu {
+            position: relative;
+        }
+        .menu button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-top: 50px;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 2rem;
+            font-style: italic;
+            margin-top: -10px;
+            color: #f1c40f;
+        }
+        .subtitle {
+            font-style: italic;
+            margin: 10px 0 30px;
+            font-size: 1.2rem;
+            color: #d3d3d3;
+        }
+        .content img {
+            width: 300px;
+            margin: 20px 0;
+        }
+        .section {
+            margin: 50px 20px;
+            text-align: left;
+        }
+        .section h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .section .grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .section .grid .box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        .section .grid img {
+            width: 300px;
+            border-radius: 5px;
+        }
+        .chat {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .auth {
+            position: absolute;
+            top: 10px;
+            right: 90px;
+            font-size: 1rem;
+        }
+        #chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+
+        #chat-popup textarea {
+            width: 100%;
+            height: 80px;
+            width: 280px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        #chat-popup button {
+            background-color: #f1c40f;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #chat-popup button:hover {
+            background-color: #d3ad15;
+        }
+
+        #open-chat {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #5865F2;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #open-chat:hover {
+            background-color: #4752C4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">TechSpace Group</a>
+        <div class="auth">
+            <a href="#" style="color: white; text-decoration: none;">Log In</a>
+        </div>
+        <div class="menu">
+            <button>Menu</button>
+        </div>
+    </header>
+    <main>
+        <h1>BIENVENUE SUR TechSpace-group</h1>
+        <h2>La Tech Pour Tous</h2>
+        <p class="subtitle">"Simplifiez le quotidien des pros et des particuliers grâce à nos solutions tech."</p>
+        <div class="content">
+            <img src="Logos/Logo.png" alt="Logo TechSpace Group">
+        </div>
+
+        <!-- Nouvelle Section -->
+        <div class="section">
+            <h3>Notre Expertise au Service des Professionnels</h3>
+            <p>Spécialisés en cybersécurité et en aménagement de bureaux, nous accompagnons les entreprises dans la sécurisation de leurs données et la création d’espaces de travail optimisés.</p>
+            <p>Que vous soyez une PME, une grande entreprise ou un indépendant, notre savoir-faire est dédié exclusivement aux besoins des professionnels.</p>
+            <div class="grid">
+                <div class="box">Si Rendre &rarr;</div>
+                <img src="Logos/2024-11-18-21.28.02.png" alt="Cybershield & Prospace Solutions">
+            </div>
+        </div>
+        <div class="section">
+            <h3>Votre Expert en Informatique pour les Particuliers</h3>
+            <p>Découvrez notre gamme de PC conçus pour répondre à vos besoins du quotidien : travail, loisirs ou gaming.</p>
+            <p>Nous proposons des solutions fiables, performantes et adaptées à tous les budgets, avec un accompagnement personnalisé pour vous aider à faire le meilleur choix.</p>
+            <div class="grid">
+                <div class="box">Si Rendre &rarr;</div>
+                <img src="Logos/2024-11-18 22.04.20.png" alt="TechSpace - Informatique">
+            </div>
+        </div>
+
+    </main>
+    <button id="open-chat">💬</button>
+
+    <!-- Fenêtre du chat -->
+    <div id="chat-popup">
+        <h3>Envoyez-nous un message</h3>
+        <textarea id="userMessage" placeholder="Écrivez votre message ici..."></textarea>
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+    <script>
+        // Fonction pour ouvrir/fermer le pop-up
+        const openChatButton = document.getElementById("open-chat");
+        const chatPopup = document.getElementById("chat-popup");
+
+        openChatButton.addEventListener("click", () => {
+          chatPopup.style.display = chatPopup.style.display === "block" ? "none" : "block";
+        });
+
+        // Fonction pour envoyer un message à Discord
+        function sendMessage() {
+          const message = document.getElementById("userMessage").value;
+          if (!message) {
+            alert("Veuillez entrer un message !");
+            return;
+          }
+
+          // Remplacez par votre URL de webhook Discord
+          const webhookURL = "https://discord.com/api/webhooks/WEBHOOK_ID/WEBHOOK_TOKEN";
+
+          fetch(webhookURL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              content: message, // Contenu du message envoyé à Discord
+            }),
+          })
+            .then((response) => {
+              if (response.ok) {
+                alert("Message envoyé avec succès !");
+                document.getElementById("userMessage").value = ""; // Réinitialise le champ texte
+              } else {
+                alert("Erreur lors de l'envoi du message.");
+              }
+            })
+            .catch((error) => {
+              console.error("Erreur :", error);
+              alert("Impossible d'envoyer le message.");
+            });
+        }
+    </script>
+</body>
+</html>
