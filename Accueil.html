@@ -108,70 +108,165 @@
             right: 90px;
             font-size: 1rem;
         }
-        #chat-popup {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 300px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            padding: 15px;
-            font-family: Arial, sans-serif;
-            color: black;
+        #chat-box {
+          width: 350px;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          background-color: #f9f9f9;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          font-family: 'Arial', sans-serif;
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
         }
 
-        #chat-popup textarea {
-            width: 100%;
-            height: 80px;
-            width: 280px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 10px;
-            font-family: Arial, sans-serif;
+        #messages {
+          flex: 1;
+          height: 300px;
+          overflow-y: auto;
+          background-color: #fff;
+          border: 1px solid #eee;
+          border-radius: 8px;
+          padding: 10px;
+          margin-bottom: 10px;
+          font-size: 14px;
+          color: #333;
         }
 
-        #chat-popup button {
-            background-color: #f1c40f;
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            cursor: pointer;
+        #chat-box {
+          width: 350px;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          background-color: #f9f9f9;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          font-family: 'Arial', sans-serif;
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          color: black;
         }
 
-        #chat-popup button:hover {
-            background-color: #d3ad15;
+        #close-chat {
+          align-self: flex-end;
+          background: none;
+          border: none;
+          font-size: 16px;
+          cursor: pointer;
+          color: #333;
+          margin-bottom: 10px;
+        }
+
+        #messages {
+          flex: 1;
+          height: 300px;
+          overflow-y: auto;
+          background-color: #fff;
+          border: 1px solid #eee;
+          border-radius: 8px;
+          padding: 10px;
+          margin-bottom: 10px;
+          font-size: 14px;
+          color: #333;
+        }
+
+        #chat-form {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+
+        #chat-form input {
+          flex: 1;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          font-size: 14px;
+          color: #333;
+          outline: none;
+        }
+
+        #chat-form button {
+          padding: 10px 15px;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 8px;
+          font-size: 14px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        #chat-form button:hover {
+          background-color: #0056b3;
         }
 
         #open-chat {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #5865F2;
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 50%;
-            cursor: pointer;
+          width: 50px; /* Taille carrée */
+          height: 50px;
+          background-color: #007bff; /* Couleur de fond */
+          color: #fff; /* Couleur du texte/emoji */
+          border: none; /* Pas de bordure */
+          border-radius: 10px; /* Coins arrondis */
+          font-size: 20px; /* Taille du texte/emoji */
+          cursor: pointer; /* Curseur interactif */
+          transition: background-color 0.3s ease;
+          position: fixed; /* Positionné en bas à droite de l'écran */
+          bottom: 20px;
+          right: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         #open-chat:hover {
-            background-color: #4752C4;
+          background-color: #0056b3; /* Couleur au survol */
+        }
+
+        nav {
+        background-color: #333;
+        overflow: hidden;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        /* Pour que le menu occupe toute la largeur de l'écran */
+        .menu {
+            text-align: center;
+        }
+
+        .menu a {
+            margin: 0 15px;
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="menu">
+            <!-- Lien vers l'accueil -->
+            <a href="index.html">Accueil</a>
+            <!-- Lien vers Accueil Particulier -->
+            <a href="Accueil.html">Accueil Particulier</a>
+            <!-- Lien vers Accueil Professionnelle -->
+            <a href="Page%20par%20page%20Chatgpt/Entreprise/AccueilEntreprises.html">Accueil Professionnelle</a>
+        </div>
+    </nav>
     <header>
         <a href="#" class="logo">TechSpace Group</a>
         <div class="auth">
-            <a href="#" style="color: white; text-decoration: none;">Log In</a>
-        </div>
-        <div class="menu">
-            <button>Menu</button>
+            <a href="" style="color: white; text-decoration: none;">Log In</a>
         </div>
     </header>
     <main>
@@ -203,55 +298,54 @@
         </div>
 
     </main>
-    <button id="open-chat">💬</button>
+    <button id="open-chat" onclick="openChat()">💬</button>
 
     <!-- Fenêtre du chat -->
-    <div id="chat-popup">
-        <h3>Envoyez-nous un message</h3>
-        <textarea id="userMessage" placeholder="Écrivez votre message ici..."></textarea>
-        <button onclick="sendMessage()">Envoyer</button>
+    <div id="chat-box" style="display: none;">
+        <h4 id="support-h4"><button id="close-chat" onclick="closeChat()">✖</button> Discussion avec le support</h4>
+
+        <div id="messages"></div>
+        <form id="chat-form">
+            <input type="text" id="user-message" placeholder="Posez votre question..." required />
+            <button type="submit">Envoyer</button>
+        </form>
     </div>
     <script>
-        // Fonction pour ouvrir/fermer le pop-up
-        const openChatButton = document.getElementById("open-chat");
-        const chatPopup = document.getElementById("chat-popup");
+        document.getElementById("chat-form").addEventListener("submit", async (e) => {
+          e.preventDefault();
 
-        openChatButton.addEventListener("click", () => {
-          chatPopup.style.display = chatPopup.style.display === "block" ? "none" : "block";
-        });
+          const messageContent = document.getElementById("user-message").value;
+          const webhookUrl = "https://discord.com/api/webhooks/1308854021070786641/Nkf2AOXW86P4gM0JUHXsVZrhP-idlQuVl2b-sRM1w3BQXk3P_c6zLvPFgTt1P9aTrh4q"; // Remplacez par votre URL de webhook Discord
 
-        // Fonction pour envoyer un message à Discord
-        function sendMessage() {
-          const message = document.getElementById("userMessage").value;
-          if (!message) {
-            alert("Veuillez entrer un message !");
-            return;
-          }
+          const data = {
+            content: messageContent,
+            username: "Utilisateur Site Web",
+          };
 
-          // Remplacez par votre URL de webhook Discord
-          const webhookURL = "https://discord.com/api/webhooks/1308854021070786641/Nkf2AOXW86P4gM0JUHXsVZrhP-idlQuVl2b-sRM1w3BQXk3P_c6zLvPFgTt1P9aTrh4q";
-
-          fetch(webhookURL, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              content: message, // Contenu du message envoyé à Discord
-            }),
-          })
-            .then((response) => {
-              if (response.ok) {
-                alert("Message envoyé avec succès !");
-                document.getElementById("userMessage").value = ""; // Réinitialise le champ texte
-              } else {
-                alert("Erreur lors de l'envoi du message.");
-              }
-            })
-            .catch((error) => {
-              console.error("Erreur :", error);
-              alert("Impossible d'envoyer le message.");
+          try {
+            await fetch(webhookUrl, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
             });
+
+            // Affiche le message sur l'interface
+            document.getElementById("messages").innerHTML += `<div><strong>Vous :</strong> ${messageContent}</div>`;
+            document.getElementById("user-message").value = ""; // Réinitialise le champ de saisie
+          } catch (error) {
+            console.error("Erreur lors de l'envoi du message :", error);
+          }
+        });
+        // Fonction pour ouvrir le chat
+        function openChat() {
+          const chatBox = document.getElementById("chat-box");
+          chatBox.style.display = "block"; // Affiche la boîte de chat
+        }
+
+        // Fonction pour fermer le chat
+        function closeChat() {
+          const chatBox = document.getElementById("chat-box");
+          chatBox.style.display = "none"; // Cache la boîte de chat
         }
     </script>
 </body>
