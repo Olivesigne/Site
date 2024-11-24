@@ -5,311 +5,423 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechSpace Group</title>
     <style>
+
+
         body {
-            margin: 0;
-            font-family: 'Georgia', serif;
-            background-color: black;
-            color: white;
-            text-align: center;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-        }
-        .logo {
-            font-size: 1.2rem;
-            text-decoration: none;
-            color: white;
-        }
-        .menu {
-            position: relative;
-        }
-        .menu button {
-            background-color: white;
-            color: black;
-            border: none;
-            padding: 10px 15px;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-top: 50px;
-            font-weight: bold;
-        }
-        h2 {
-            font-size: 2rem;
-            font-style: italic;
-            margin-top: -10px;
-            color: #f1c40f;
-        }
-        .subtitle {
-            font-style: italic;
-            margin: 10px 0 30px;
-            font-size: 1.2rem;
-            color: #d3d3d3;
-        }
-        .content img {
-            width: 300px;
-            margin: 20px 0;
-        }
-        .section {
-            margin: 50px 20px;
-            text-align: left;
-        }
-        .section h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        .section p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .section .grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-        .section .grid .box {
-            width: 300px;
-            height: 200px;
-            border: 2px solid white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-        .section .grid img {
-            width: 300px;
-            border-radius: 5px;
-        }
-        .chat {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: white;
-            color: black;
-            border: none;
-            padding: 10px 15px;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .auth {
-            position: absolute;
-            top: 10px;
-            right: 90px;
-            font-size: 1rem;
-        }
-        #chat-box {
-          width: 350px;
-          border: 1px solid #ddd;
-          border-radius: 10px;
-          background-color: #f9f9f9;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          font-family: 'Arial', sans-serif;
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f9;
+      }
+      .navbar {
+          background-color: #333;
+          color: white;
+          padding: 10px 20px;
           display: flex;
-          flex-direction: column;
-          padding: 10px;
-        }
-
-        #messages {
-          flex: 1;
-          height: 300px;
-          overflow-y: auto;
-          background-color: #fff;
-          border: 1px solid #eee;
-          border-radius: 8px;
-          padding: 10px;
-          margin-bottom: 10px;
-          font-size: 14px;
-          color: #333;
-        }
-
-        #chat-box {
-          width: 350px;
-          border: 1px solid #ddd;
-          border-radius: 10px;
-          background-color: #f9f9f9;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          font-family: 'Arial', sans-serif;
+          justify-content: space-between;
+          align-items: center;
+      }
+      .navbar a {
+          color: white;
+          text-decoration: none;
+          margin: 0 10px;
+      }
+      .navbar a:hover {
+          text-decoration: underline;
+      }
+      .content {
+          text-align: center;
+          padding: 50px;
+      }
+      .content h1 {
+          font-size: 2.5em;
+          color: white;
+          background: black;
+          padding: 20px;
+          display: inline-block;
+      }
+      body {
+          margin: 0;
+          font-family: 'Georgia', serif;
+          background-color: black;
+          color: white;
+          text-align: center;
+      }
+      header {
           display: flex;
-          flex-direction: column;
-          padding: 10px;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 20px;
+      }
+      .logo {
+          font-size: 1.2rem;
+          text-decoration: none;
+          color: white;
+      }
+      .menu {
+          position: relative;
+      }
+      .menu button {
+          background-color: white;
+          color: black;
+          border: none;
+          padding: 10px 15px;
+          font-size: 1rem;
+          cursor: pointer;
+          border-radius: 5px;
+      }
+      h1 {
+          font-size: 3rem;
+          margin-top: 50px;
+          font-weight: bold;
+      }
+      h2 {
+          font-size: 2rem;
+          font-style: italic;
+          margin-top: -10px;
+          color: #f1c40f;
+      }
+      .subtitle {
+          font-style: italic;
+          margin: 10px 0 30px;
+          font-size: 1.2rem;
+          color: #d3d3d3;
+      }
+      .content img {
+          width: 300px;
+          margin: 20px 0;
+      }
+      .section {
+          margin: 50px 20px;
+          text-align: left;
+      }
+      .section h3 {
+          font-size: 2rem;
+          margin-bottom: 20px;
+      }
+      .section p {
+          font-size: 1.2rem;
+          line-height: 1.6;
+          margin-bottom: 20px;
+      }
+      .section .grid {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+      }
+      .section .grid .box {
+          width: 300px;
+          height: 200px;
+          border: 2px solid white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.2rem;
+          cursor: pointer;
+      }
+      .section .grid img {
+          width: 300px;
+          border-radius: 5px;
+      }
+      .chat {
           position: fixed;
           bottom: 20px;
           right: 20px;
+          background-color: white;
           color: black;
-        }
-
-        #close-chat {
-          align-self: flex-end;
-          background: none;
           border: none;
-          font-size: 16px;
-          cursor: pointer;
-          color: #333;
-          margin-bottom: 10px;
-        }
-
-        #messages {
-          flex: 1;
-          height: 300px;
-          overflow-y: auto;
-          background-color: #fff;
-          border: 1px solid #eee;
-          border-radius: 8px;
-          padding: 10px;
-          margin-bottom: 10px;
-          font-size: 14px;
-          color: #333;
-        }
-
-        #chat-form {
-          display: flex;
-          gap: 10px;
-          align-items: center;
-        }
-
-        #chat-form input {
-          flex: 1;
-          padding: 10px;
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          font-size: 14px;
-          color: #333;
-          outline: none;
-        }
-
-        #chat-form button {
           padding: 10px 15px;
-          background-color: #007bff;
-          color: #fff;
-          border: none;
-          border-radius: 8px;
-          font-size: 14px;
+          font-size: 1rem;
           cursor: pointer;
-          transition: background-color 0.3s ease;
+          border-radius: 5px;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .auth {
+          position: absolute;
+          top: 10px;
+          right: 90px;
+          font-size: 1rem;
+      }
+      #chat-box {
+        width: 350px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      #messages {
+        flex: 1;
+        height: 300px;
+        overflow-y: auto;
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      #chat-box {
+        width: 350px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        color: black;
+      }
+
+      #close-chat {
+        align-self: flex-end;
+        background: none;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      #messages {
+        flex: 1;
+        height: 300px;
+        overflow-y: auto;
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      #chat-form {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      #chat-form input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #333;
+        outline: none;
+      }
+
+      #chat-form button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #chat-form button:hover {
+        background-color: #0056b3;
+      }
+
+      #open-chat {
+        width: 50px; /* Taille carrée */
+        height: 50px;
+        background-color: #007bff; /* Couleur de fond */
+        color: #fff; /* Couleur du texte/emoji */
+        border: none; /* Pas de bordure */
+        border-radius: 10px; /* Coins arrondis */
+        font-size: 20px; /* Taille du texte/emoji */
+        cursor: pointer; /* Curseur interactif */
+        transition: background-color 0.3s ease;
+        position: fixed; /* Positionné en bas à droite de l'écran */
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      #open-chat:hover {
+        background-color: #0056b3; /* Couleur au survol */
+      }
+
+      nav {
+      background-color: #333;
+      overflow: hidden;
+      }
+
+      nav a {
+          color: white;
+          padding: 14px 20px;
+          text-decoration: none;
+          display: inline-block;
+      }
+
+      nav a:hover {
+          background-color: #575757;
+      }
+
+      /* Pour que le menu occupe toute la largeur de l'écran */
+      .menu {
+          text-align: center;
+      }
+
+      .menu a {
+          margin: 0 15px;
+      }
+ }
+    .content h1 {
+        font-size: 2.5em;
+        color: white;
+        background: black;
+        padding: 20px;
+        display: inline-block;
         }
 
-        #chat-form button:hover {
-          background-color: #0056b3;
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
         }
-
-        #open-chat {
-          width: 50px; /* Taille carrée */
-          height: 50px;
-          background-color: #007bff; /* Couleur de fond */
-          color: #fff; /* Couleur du texte/emoji */
-          border: none; /* Pas de bordure */
-          border-radius: 10px; /* Coins arrondis */
-          font-size: 20px; /* Taille du texte/emoji */
-          cursor: pointer; /* Curseur interactif */
-          transition: background-color 0.3s ease;
-          position: fixed; /* Positionné en bas à droite de l'écran */
-          bottom: 20px;
-          right: 20px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-        #open-chat:hover {
-          background-color: #0056b3; /* Couleur au survol */
-        }
-
-        nav {
-        background-color: #333;
-        overflow: hidden;
-        }
-
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            background-color: #575757;
-        }
-
-        /* Pour que le menu occupe toute la largeur de l'écran */
-        .menu {
+        .modal-content h2 {
+            margin: 0 0 20px;
             text-align: center;
         }
-
-        .menu a {
-            margin: 0 15px;
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
+        .modal-content input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .modal-content button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .modal-content button:hover {
+            background-color: #0056b3;
+        }
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: #555;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+        .close-modal:hover {
+            color: black;
+        }
+        </form>
+        <div style="text-align: center; margin-top: 10px;">
+            <p>Pas encore inscrit ? <a href="#" id="switch-to-signup" style="color: #007BFF; text-decoration: none;">S'inscrire</a></p>
     </style>
+
 </head>
 <body>
-    <nav>
-        <div class="menu">
-            <!-- Lien vers l'accueil -->
-            <a href="index.html">Accueil</a>
-            <!-- Lien vers Accueil Particulier -->
-            <a href="Accueil.html">Accueil Particulier</a>
-            <!-- Lien vers Accueil Professionnelle -->
-            <a href="Page%20par%20page%20Chatgpt/Entreprise/AccueilEntreprises.html">Accueil Professionnelle</a>
-        </div>
-    </nav>
-    <header>
-        <a href="#" class="logo">TechSpace Group</a>
-        <div class="auth">
-            <a href="" style="color: white; text-decoration: none;">Log In</a>
-        </div>
-    </header>
-    <main>
-        <h1>BIENVENUE SUR TechSpace-group</h1>
-        <h2>La Tech Pour Tous</h2>
-        <p class="subtitle">"Simplifiez le quotidien des pros et des particuliers grâce à nos solutions tech."</p>
-        <div class="content">
-            <img src="Logos/Logo.png" alt="Logo TechSpace Group">
-        </div>
-
-        <!-- Nouvelle Section -->
-        <div class="section">
-            <h3>Notre Expertise au Service des Professionnels</h3>
-            <p>Spécialisés en cybersécurité et en aménagement de bureaux, nous accompagnons les entreprises dans la sécurisation de leurs données et la création d’espaces de travail optimisés.</p>
-            <p>Que vous soyez une PME, une grande entreprise ou un indépendant, notre savoir-faire est dédié exclusivement aux besoins des professionnels.</p>
-            <div class="grid">
-                <div class="box">Si Rendre &rarr;</div>
-                <img src="Logos/2024-11-18-21.28.02.png" alt="Cybershield & Prospace Solutions">
-            </div>
-        </div>
-        <div class="section">
-            <h3>Votre Expert en Informatique pour les Particuliers</h3>
-            <p>Découvrez notre gamme de PC conçus pour répondre à vos besoins du quotidien : travail, loisirs ou gaming.</p>
-            <p>Nous proposons des solutions fiables, performantes et adaptées à tous les budgets, avec un accompagnement personnalisé pour vous aider à faire le meilleur choix.</p>
-            <div class="grid">
-                <div class="box">Si Rendre &rarr;</div>
-                <img src="Logos/2024-11-18 22.04.20.png" alt="TechSpace - Informatique">
-            </div>
-        </div>
-
-    </main>
-    <button id="open-chat" onclick="openChat()">💬</button>
-
-    <!-- Fenêtre du chat -->
-    <div id="chat-box" style="display: none;">
-        <h4 id="support-h4"><button id="close-chat" onclick="closeChat()">✖</button> Discussion avec le support</h4>
-
-        <div id="messages"></div>
-        <form id="chat-form">
-            <input type="text" id="user-message" placeholder="Posez votre question..." required />
-            <button type="submit">Envoyer</button>
-        </form>
+<nav>
+    <div class="menu">
+        <!-- Lien vers l'accueil -->
+        <a href="index.html">Accueil</a>
+        <!-- Lien vers Accueil Particulier -->
+        <a href="Accueil.html">Accueil Particulier</a>
+        <!-- Lien vers Accueil Professionnelle -->
+        <a href="Page%20par%20page%20Chatgpt/Entreprise/AccueilEntreprises.html">Accueil Professionnelle</a>
+        <button id="login-button" style="background: none; border: 1px solid white; color: white; padding: 5px 15px; border-radius: 4px; cursor: pointer;">Log In</button>
     </div>
+</nav>
+<main>
+    <h1>BIENVENUE SUR TechSpace-group</h1>
+    <h2>La Tech Pour Tous</h2>
+    <p class="subtitle">"Simplifiez le quotidien des pros et des particuliers grâce à nos solutions tech."</p>
+    <div class="content">
+        <img src="Logos/Logo.png" alt="Logo TechSpace Group">
+    </div>
+
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <h2>Connexion</h2>
+            <form id="login-form">
+                <input type="text" placeholder="Adresse e-mail ou Pseudo" name="identifier" required>
+                <input type="password" placeholder="Mot de passe" name="password" required>
+                <button type="submit">Se connecter</button>
+            </form>
+            <div style="text-align: center; margin-top: 10px;">
+                <p>Pas encore inscrit ? <a href="#" id="switch-to-signup">S'inscrire</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nouvelle Section -->
+    <div class="section">
+        <h3>Notre Expertise au Service des Professionnels</h3>
+        <p>Spécialisés en cybersécurité et en aménagement de bureaux, nous accompagnons les entreprises dans la sécurisation de leurs données et la création d’espaces de travail optimisés.</p>
+        <p>Que vous soyez une PME, une grande entreprise ou un indépendant, notre savoir-faire est dédié exclusivement aux besoins des professionnels.</p>
+        <div class="grid">
+            <div class="box">Si Rendre &rarr;</div>
+            <img src="Logos/2024-11-18-21.28.02.png" alt="Cybershield & Prospace Solutions">
+        </div>
+    </div>
+    <div class="section">
+        <h3>Votre Expert en Informatique pour les Particuliers</h3>
+        <p>Découvrez notre gamme de PC conçus pour répondre à vos besoins du quotidien : travail, loisirs ou gaming.</p>
+        <p>Nous proposons des solutions fiables, performantes et adaptées à tous les budgets, avec un accompagnement personnalisé pour vous aider à faire le meilleur choix.</p>
+        <div class="grid">
+            <div class="box">Si Rendre &rarr;</div>
+            <img src="Logos/2024-11-18 22.04.20.png" alt="TechSpace - Informatique">
+        </div>
+    </div>
+
+</main>
+<button id="open-chat" onclick="openChat()">💬</button>
+
+<!-- Fenêtre du chat -->
+<div id="chat-box" style="display: none;">
+    <h4 id="support-h4"><button id="close-chat" onclick="closeChat()">✖</button> Discussion avec le support</h4>
+
+    <div id="messages"></div>
+    <form id="chat-form">
+        <input type="text" id="user-message" placeholder="Posez votre question..." required />
+        <button type="submit">Envoyer</button>
+    </form>
     <script>
         document.getElementById("chat-form").addEventListener("submit", async (e) => {
           e.preventDefault();
@@ -347,6 +459,38 @@
           const chatBox = document.getElementById("chat-box");
           chatBox.style.display = "none"; // Cache la boîte de chat
         }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const loginButton = document.getElementById('login-button');
+        const modal = document.getElementById('auth-modal');
+        const closeModal = document.getElementById('close-modal');
+        const switchToSignup = document.getElementById('switch-to-signup');
+
+        // Ouvrir le modal
+        loginButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.style.display = 'flex';
+        });
+
+        // Fermer le modal
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Fermer le modal en cliquant à l'extérieur
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Switch to signup form (ajoutez votre logique ici si nécessaire)
+        switchToSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Redirection vers l\'interface d\'inscription'); // Remplacez par votre logique
+
+        });
+    });
     </script>
 </body>
 </html>
