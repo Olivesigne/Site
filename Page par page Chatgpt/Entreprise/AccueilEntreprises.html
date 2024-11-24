@@ -5,6 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechSpace Group</title>
     <style>
+        .chat {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .auth {
+            position: absolute;
+            top: 10px;
+            right: 90px;
+            font-size: 1rem;
+        }
+        #chat-box {
+          width: 350px;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          background-color: #f9f9f9;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          font-family: 'Arial', sans-serif;
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+        }
+
+        #messages {
+          flex: 1;
+          height: 300px;
+          overflow-y: auto;
+          background-color: #fff;
+          border: 1px solid #eee;
+          border-radius: 8px;
+          padding: 10px;
+          margin-bottom: 10px;
+          font-size: 14px;
+          color: #333;
+        }
+
+        #chat-box {
+          width: 350px;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          background-color: #f9f9f9;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          font-family: 'Arial', sans-serif;
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          color: black;
+        }
+
+        #close-chat {
+          align-self: flex-end;
+          background: none;
+          border: none;
+          font-size: 16px;
+          cursor: pointer;
+          color: #333;
+          margin-bottom: 10px;
+        }
+
+        #messages {
+          flex: 1;
+          height: 300px;
+          overflow-y: auto;
+          background-color: #fff;
+          border: 1px solid #eee;
+          border-radius: 8px;
+          padding: 10px;
+          margin-bottom: 10px;
+          font-size: 14px;
+          color: #333;
+        }
+
+        #chat-form {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+
+        #chat-form input {
+          flex: 1;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          font-size: 14px;
+          color: #333;
+          outline: none;
+        }
+
+        #chat-form button {
+          padding: 10px 15px;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 8px;
+          font-size: 14px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        #chat-form button:hover {
+          background-color: #0056b3;
+        }
+
+        #open-chat {
+          width: 50px; /* Taille carrée */
+          height: 50px;
+          background-color: #007bff; /* Couleur de fond */
+          color: #fff; /* Couleur du texte/emoji */
+          border: none; /* Pas de bordure */
+          border-radius: 10px; /* Coins arrondis */
+          font-size: 20px; /* Taille du texte/emoji */
+          cursor: pointer; /* Curseur interactif */
+          transition: background-color 0.3s ease;
+          position: fixed; /* Positionné en bas à droite de l'écran */
+          bottom: 20px;
+          right: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #open-chat:hover {
+          background-color: #0056b3; /* Couleur au survol */
+        }
+
         body {
             margin: 0;
             font-family: 'Georgia', serif;
@@ -22,17 +159,29 @@
             text-decoration: none;
             color: white;
         }
-        .menu {
-            position: relative;
+         nav {
+        background-color: #333;
+        overflow: hidden;
         }
-        .menu button {
-            background-color: white;
-            color: black;
-            border: none;
-            padding: 10px 15px;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 5px;
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        /* Pour que le menu occupe toute la largeur de l'écran */
+        .menu {
+            text-align: center;
+        }
+
+        .menu a {
+            margin: 0 15px;
         }
         .section {
             margin: 50px auto;
@@ -59,19 +208,50 @@
             padding: 20px 0;
             color: #ccc;
             font-size: 0.9rem;
-        }
+
     </style>
 </head>
 <body>
 
-    <!-- Menu uniquement en première page -->
-    <header>
-        <a href="#" class="logo">TechSpace Group</a>
-        <div class="menu">
-            <button>Menu</button>
-        </div>
-    </header>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <div>
+        <a href="#">Accueil</a>
+        <a href="#">Accueil Particulier</a>
+        <a href="#">Accueil Professionnelle</a>
+    </div>
+    <div>
+        <a href="#">Log In</a>
+    </div>
+</div>
+</body>
     <!-- Section 1 -->
     <div class="section">
         <h3>Une Entreprise Pour Les Entreprises</h3>
@@ -99,6 +279,59 @@
     <footer class="footer">
         &copy; 2024 TechSpace Group - Tous droits réservés.
     </footer>
+</div>
+
+</main>
+<button id="open-chat" onclick="openChat()">💬</button>
+
+<!-- Fenêtre du chat -->
+<div id="chat-box" style="display: none;">
+    <h4 id="support-h4"><button id="close-chat" onclick="closeChat()">✖</button> Discussion avec le support</h4>
+
+    <div id="messages"></div>
+    <form id="chat-form">
+        <input type="text" id="user-message" placeholder="Posez votre question..." required />
+        <button type="submit">Envoyer</button>
+    </form>
+</div>
+<script>
+    document.getElementById("chat-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const messageContent = document.getElementById("user-message").value;
+      const webhookUrl = "https://discord.com/api/webhooks/1308854021070786641/Nkf2AOXW86P4gM0JUHXsVZrhP-idlQuVl2b-sRM1w3BQXk3P_c6zLvPFgTt1P9aTrh4q"; // Remplacez par votre URL de webhook Discord
+
+      const data = {
+        content: messageContent,
+        username: "Utilisateur Site Web",
+      };
+
+      try {
+        await fetch(webhookUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        // Affiche le message sur l'interface
+        document.getElementById("messages").innerHTML += `<div><strong>Vous :</strong> ${messageContent}</div>`;
+        document.getElementById("user-message").value = ""; // Réinitialise le champ de saisie
+      } catch (error) {
+        console.error("Erreur lors de l'envoi du message :", error);
+      }
+    });
+    // Fonction pour ouvrir le chat
+    function openChat() {
+      const chatBox = document.getElementById("chat-box");
+      chatBox.style.display = "block"; // Affiche la boîte de chat
+    }
+
+    // Fonction pour fermer le chat
+    function closeChat() {
+      const chatBox = document.getElementById("chat-box");
+      chatBox.style.display = "none"; // Cache la boîte de chat
+    }
+</script>
 
 </body>
 </html>
