@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion et Inscription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 400px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Connexion</h2>
+    <form id="login-form">
+        <input type="text" placeholder="Adresse e-mail ou Pseudo" name="identifier" required>
+        <input type="password" placeholder="Mot de passe" name="password" required>
+        <button type="submit">Se connecter</button>
+    </form>
+    <div class="link">
+        <p>Pas encore inscrit ? <a href="#" id="show-signup">S'inscrire</a></p>
+    </div>
+</div>
+
+<div class="container" style="display: none;" id="signup-container">
+    <h2>Inscription</h2>
+    <form id="signup-form">
+        <input type="text" placeholder="Pseudo" name="username" required>
+        <input type="email" placeholder="Adresse e-mail" name="email" required>
+        <input type="password" placeholder="Mot de passe" name="password" required>
+        <button type="submit">S'inscrire</button>
+    </form>
+    <div class="link">
+        <p>Déjà inscrit ? <a href="#" id="show-login">Se connecter</a></p>
+    </div>
+</div>
+
+<script>
+    const loginContainer = document.querySelector('.container');
+    const signupContainer = document.getElementById('signup-container');
+    const showSignup = document.getElementById('show-signup');
+    const showLogin = document.getElementById('show-login');
+
+    // Switch between login and signup forms
+    showSignup.addEventListener('click', () => {
+        loginContainer.style.display = 'none';
+        signupContainer.style.display = 'block';
+    });
+
+    showLogin.addEventListener('click', () => {
+        signupContainer.style.display = 'none';
+        loginContainer.style.display = 'block';
+    });
+
+    // Submit handlers
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        alert(`Connexion: ${data.get('identifier')}`);
+        // Ajoutez ici votre logique d'authentification
+    });
+
+    document.getElementById('signup-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        alert(`Inscription: ${data.get('email')} - Vérifiez vos emails pour valider votre compte.`);
+        // Ajoutez ici votre logique d'inscription et de vérification par e-mail
+    });
+</script>
+</body>
+</html>
