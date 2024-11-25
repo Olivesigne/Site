@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options et Devis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: white;
+        }
+        .header {
+            padding: 20px;
+            background-color: #333;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            color: #f1c40f;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #111;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+        .option {
+            border-bottom: 1px solid #444;
+            padding: 20px 0;
+        }
+        .option h3 {
+            margin: 0;
+        }
+        .option button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .option button:hover {
+            background-color: #0056b3;
+        }
+        /* Bulle pour le panier */
+        .cart-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .cart-bubble:hover {
+            background-color: #0056b3;
+        }
+        .cart-bubble .notification {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>Options TechSpace avec Devis</h1>
+</div>
+
+<div class="container">
+    <div id="options-container"></div>
+</div>
+
+<!-- Bulle interactive -->
+<div class="cart-bubble" onclick="redirectToCart()">
+    🛒
+    <div class="notification" id="cart-notification" style="display: none;">0</div>
+</div>
+
+<script>
+    // Liste des options
+    const options = [
+        { name: "Protection contre les menaces avancées (APT)", price: 400, details: "Surveillance avancée des cybermenaces complexes." },
+{ name: "Simulation d'attaques", price: 350, details: "Tests de vulnérabilités à travers des simulations réelles." },
+{ name: "Audit de sécurité", price: 250, details: "Suivi continu pour garantir la conformité des systèmes." },
+{ name: "Sécurité des applications mobiles", price: 200, details: "Protection des données sensibles sur les appareils mobiles." },
+{ name: "Intégration SIEM", price: 300, details: "Gestion centralisée des alertes de sécurité." },
+{ name: "Surveillance Dark Web", price: 120, details: "Identification des fuites de données sur la Dark Web." },
+{ name: "Protection IoT", price: 180, details: "Sécurisation des objets connectés contre les intrusions." },
+{ name: "Environnements Cloud", price: 250, details: "Protection des données hébergées dans le cloud." },
+{ name: "Service de réponse aux incidents", price: 500, details: "Intervention rapide en cas de cyberincident." },
+{ name: "Gestion des identités et accès", price: 150, details: "Contrôle avancé des accès utilisateur." },
+{ name: "Gestion des accès privilégiés (PAM)", price: 300, details: "Contrôle avancé et sécurisé des accès privilégiés aux systèmes sensibles." },
+{ name: "Gestion des accès privilégiés (PAM)", price: 300, details: "Contrôle avancé et sécurisé des accès privilégiés aux systèmes sensibles." },
+{ name: "Protection contre les attaques DDoS", price: 400, details: "Détection et atténuation des attaques par déni de service distribué (DDoS)." },
+{name: "Chiffrement des données", price: 200, details: "Mise en œuvre de solutions de chiffrement pour protéger les données sensibles." },
+{ name: "Formation à la cybersécurité", price: 150, details: "Formation des employés aux meilleures pratiques de cybersécurité." },
+{ name: "Analyse des vulnérabilités", price: 250, details: "Scan complet pour identifier les failles de sécurité dans le système." },
+{ name: "Gestion des correctifs (Patch Management)", price: 180, details: "Planification et application des correctifs de sécurité pour réduire les risques." },
+{ name: "Sécurisation des serveurs", price: 300, details: "Configuration sécurisée et surveillance continue des serveurs." },
+{ name: "Protection des e-mails contre le phishing", price: 150, details: "Détection et blocage des e-mails de phishing et des menaces liées." },
+{ name: "Sécurisation des postes de travail", price: 250, details: "Déploiement de solutions pour sécuriser les appareils utilisateurs." },
+{name: "Protection des réseaux Wi-Fi", price: 200, details: "Configuration sécurisée et surveillance des réseaux sans fil." } ,
+{name: "Surveillance SOC 24/7", price: 500, details: "Supervision en continu par un Centre Opérationnel de Sécurité (SOC)." },
+{name: "Détection et réponse aux menaces (MDR)", price: 400, details: "Services avancés pour identifier et répondre rapidement aux cybermenaces." },
+{ name: "Audit de conformité RGPD", price: 350, details: "Analyse des systèmes pour garantir la conformité avec la réglementation RGPD." },
+{ name: "Sécurisation des bases de données", price: 300, details: "Protection des bases de données critiques contre les intrusions et les fuites." },
+{ name: "Tests de pénétration avancés", price: 400, details: "Simulations sophistiquées pour tester la résilience des systèmes." },
+{ name: "Surveillance des logs", price: 250, details: "Analyse en temps réel des journaux système pour identifier les anomalies." },
+{ name: "Protection contre les ransomwares", price: 350, details: "Solutions pour prévenir et bloquer les attaques par ransomware." },
+{ name: "Sécurisation des appareils IoT", price: 200, details: "Contrôle et sécurisation des objets connectés au réseau." },
+{ name: "Gestion des identités (IAM)", price: 300, details: "Contrôle des accès utilisateurs basé sur des rôles et des politiques." },
+{ name: "Plan de continuité d'activité (PCA)", price: 500, details: "Mise en place de stratégies pour garantir la reprise après incident." }
+
+    ];
+
+    // Variables pour le panier
+    let cart = [];
+    let totalItems = 0;
+
+    // Charger les options
+    function loadOptions() {
+        const container = document.getElementById('options-container');
+        options.forEach(option => {
+            const div = document.createElement('div');
+            div.classList.add('option');
+            div.innerHTML = `
+                <h3>${option.name} – ${option.price} €/mois</h3>
+                <button onclick="addToCart('${option.name}', ${option.price})">Ajouter au panier</button>
+                <button onclick="alert('${option.details}')">Détails</button>
+            `;
+            container.appendChild(div);
+        });
+    }
+
+    // Ajouter une option au panier
+    function addToCart(name, price) {
+        cart.push({ name, price });
+        totalItems++;
+        updateNotification();
+    }
+
+    // Mettre à jour la notification
+    function updateNotification() {
+        const notification = document.getElementById('cart-notification');
+        notification.textContent = totalItems;
+        notification.style.display = 'flex';
+    }
+
+    // Rediriger vers la page panier
+    function redirectToCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        window.location.href = 'cart.html';
+    }
+
+    // Charger les options au démarrage
+    loadOptions();
+</script>
+</body>
+</html>
